@@ -1,0 +1,55 @@
+
+        body {
+            background-color: gray; /* Fondo gris claro */
+            font-family: Arial, sans-serif;
+            color: #333; /* Texto color oscuro */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #ff7f00; /* Naranja */
+            text-align: center;
+        }
+
+        p {
+            color: #28a745; /* Verde */
+            text-align: center;
+        }
+
+        button {
+            background-color: #ff7f00; /* Naranja */
+            color: white; /* Texto blanco */
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e67300; /* Naranja más oscuro al pasar el cursor */
+        }
+
+        /* Estilos para mantener el diseño centrado */
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        img {
+            width: 400px;
+            height: 300px;
+            transition: transform 0.3s ease; /* Animación suave */
+        }
+
+        /* Efecto cuando el cursor pasa sobre la imagen */
+        img:hover {
+            transform: scale(1.2); /* Escalar al 120% del tamaño original */
+        }

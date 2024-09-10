@@ -1,0 +1,61 @@
+Script de Creacion de la Base de Datos
+
+CREATE DATABASE school;
+
+-- Tabla 'school_student'
+CREATE TABLE student (
+    identifier VARCHAR(50) PRIMARY KEY,
+    first_name VARCHAR(50),
+    second_name VARCHAR(50),
+    last_name VARCHAR(50),
+    sec_last_name VARCHAR(50),
+    birth_date VARCHAR(10)
+);
+
+-- Tabla 'school_teacher'
+CREATE TABLE teacher (
+    identifier VARCHAR(50) PRIMARY KEY,
+    first_name VARCHAR(50),
+    second_name VARCHAR(50),
+    last_name VARCHAR(50),
+    sec_last_name VARCHAR(50),
+    birth_date VARCHAR(10)
+);
+
+-- Tabla 'school_course'
+CREATE TABLE course (
+    identifier_c VARCHAR(50) PRIMARY KEY,
+    name VARCHAR(50),
+    description VARCHAR(100)
+);
+
+-- Tabla 'school_course_m'
+CREATE TABLE course_m (
+    id_cm INT PRIMARY KEY,
+    id_cour VARCHAR(50),
+    id_teach VARCHAR(50),
+    FOREIGN KEY (id_cour) REFERENCES course(identifier_c),
+    FOREIGN KEY (id_teach) REFERENCES teacher(identifier)
+);
+
+-- Tabla 'school_course_s'
+CREATE TABLE course_s (
+    id_cs INT PRIMARY KEY,
+    id_cour VARCHAR(50),
+    id_stud VARCHAR(50),
+    FOREIGN KEY (id_cour) REFERENCES course(identifier_c),
+    FOREIGN KEY (id_stud) REFERENCES student(identifier)
+);
+
+-- Tabla 'school_asig_course'
+CREATE TABLE asig_course (
+    identifier_ac BIGINT PRIMARY KEY,
+    id_cm INT,
+    id_cs INT,
+    materia VARCHAR(50),
+    Zona INT CHECK (Zona BETWEEN 0 AND 100),
+    Examen INT CHECK (Examen BETWEEN 0 AND 100),
+    total INT CHECK (total BETWEEN 0 AND 100),
+    FOREIGN KEY (id_cm) REFERENCES course_m(id_cm),
+    FOREIGN KEY (id_cs) REFERENCES course_s(id_cs)
+);

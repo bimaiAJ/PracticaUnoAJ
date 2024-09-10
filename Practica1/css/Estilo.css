@@ -1,0 +1,84 @@
+body{
+    background-color: greenyellow;
+}
+
+.cambio{
+    background-color: orange;
+}
+/* Estilos generales */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: orange;
+}
+
+tr:nth-child(even) {
+    background-color: orange;
+}
+
+.btn {
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 4px;
+}
+
+.btn-success {
+    background-color: #4CAF50;
+}
+
+.btn-danger {
+    background-color: #f44336;
+}
+
+/* Estilos para diseño responsivo */
+
+/* Aplicamos el scroll horizontal solo en pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap; /* Evita que las celdas se quiebren y fuerza el scroll horizontal */
+        -webkit-overflow-scrolling: touch; /* Suaviza el scroll en dispositivos móviles */
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: center;
+        font-size: 14px; /* Reducimos el tamaño del texto en pantallas pequeñas */
+    }
+
+    .btn {
+        padding: 8px 15px; /* Aumentamos el tamaño de los botones en pantallas táctiles */
+        font-size: 14px;
+    }
+}
+
+/* Ajustes para pantallas muy pequeñas (como móviles) */
+@media screen and (max-width: 480px) {
+    th, td {
+        font-size: 12px; /* Ajustamos aún más el tamaño del texto */
+        padding: 5px;
+    }
+
+    .btn {
+        padding: 6px 12px; /* Botones más pequeños para pantallas más pequeñas */
+        font-size: 12px;
+    }
+}
+
+
+    
